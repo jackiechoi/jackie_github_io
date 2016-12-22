@@ -102,7 +102,13 @@ header {
  margin:0 auto;
  padding:8% 0;
 }
-
+#thumbnail {
+	position: relative;
+	left: -30px;
+	top: 25px;
+	width: 13%;
+	height: 13%;
+}
 .intro h1 {
  font-size: 6em;
  text-align: center;
