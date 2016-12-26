@@ -1,8 +1,9 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet';
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
 */
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -75,11 +76,10 @@ img {
 }
 
 h1, h2, h3, h4, h5 {
- font-family: proxima-nova,sans-serif;
+ font-family: 'Open Sans', sans-serif;
  font-style: normal;
 } 
 h3 {
- text-transform:capitalize;
  font-size:1.875em;
  padding:0 0 1% 0;
  color:#001833;
@@ -89,25 +89,55 @@ header {
  background:
  linear-gradient(
  rgba(224,204,200, 1.0), 
- rgba(224,204,200, 0.90)
+ rgba(224,204,200, 0.8)
  ),
- /* bottom, image */
- url(img/laptop.jpg);
+ url(img/blurred_sf6.jpg);
  background-size: cover;
  background-position: center top;
  width:100%;
+}
+
+nav {
+	float: left;
+	padding: 20px;
+	z-index: 100;
+	font-family: 'Open Sans', sans-serif;
+	display: block;
+
+}
+.menu-icon {
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: no-repeat 98% center;
+	background-color: $404040;
+	cursor: pointer;
+}
+header nav ul {
+	overflow: hidden;
+	background: #505050;
+	//height: 0;
+}
+header nav ul.open{
+	height: auto;
+}
+header nav ul li {
+	float: none;
+	text-align: left;
+	width: 100%;
+	margin: 0;
+}
+header nav ul li a {
+	color: #fff;
+	padding: 10px;
+	border-bottom: 1px solid #404040;
+	display: block;
+	margin: 0;
 }
 .intro {
  max-width: 960px;
  margin:0 auto;
  padding:8% 0;
-}
-#thumbnail {
-	position: relative;
-	left: -10px;
-	top: 30px;
-	width: 13%;
-	height: 13%;
 }
 .intro h1 {
  font-size: 6em;
@@ -121,7 +151,13 @@ header {
  display: inline-block;
  left: 30px;
 }
-
+#thumbnail {
+	width: 12%;
+	height: 12%;
+	position: relative;
+    top: 20px;
+    right: 20px;
+}
 .intro h2 {
  font-size: 2em;
  text-align:center;
@@ -135,7 +171,7 @@ header {
 .wrapper {
  max-width:960px;
  margin:0 auto;
- font-family: proxima-nova,sans-serif;
+ font-family: 'Open Sans', sans-serif;
  -webkit-animation-delay: 4s; /* Chrome, Safari, Opera */
  animation-delay: 2s;
 }
@@ -143,7 +179,7 @@ header {
  padding:4% 0;
 }
 .about p {
- font-family: proxima-nova,sans-serif;
+ font-family: 'Open Sans', sans-serif;
  font-style: normal;
  font-weight: 300;
  line-height: 1.8;
@@ -233,7 +269,7 @@ header {
  text-align:center;
 }
 .contact-content h4 {
- font-size:1.875em;
+ font-size:1.5em;
  padding:1% 0;
  color:#fff;
  font-weight:600;
@@ -243,15 +279,17 @@ header {
  color:#E0CCC8;
  text-decoration:none;
 }
+/*
 .image-divider {
  padding:15% 0;
  background:
- /* bottom, image */
- url(img/blog.jpg);
+ url(img/??????.jpg);
  background-size: cover;
  background-position: center top;
  position: relative;
 }
+*/
+
 footer {
  background-color:#E0CCC8;
  color:#fff;
@@ -265,7 +303,7 @@ footer {
  max-width:960px;
  padding:2% 0;
  margin:0 auto;
- font-family: proxima-nova,sans-serif;
+ font-family: 'Open Sans', sans-serif;
  font-style: normal;
  font-weight: 300;
  line-height: 1.4;
@@ -353,7 +391,34 @@ footer {
 		font-size: 12px;
 		line-height: 1.5;
 	}
+/*
+@media only screen and (max-width: 640px){
+	nav {
+		position: absolute;
+	}
+	#menu-icon {
+		display: inline-block;
+	}
+	nav ul, nav:active ul {
+		display: none;
+		position: absolute;
+		padding: 20px;
+		background: #c5c5c5;
+		right: 10px;
+		top: 65px;
+	}
+	nav:hover ul {
+		display: block;
+	}
+	nav li {
+		text-align: center;
+		width: 100px;
+		padding: 15px 0;
+		margin: 0;
+	}
+*/
 
+}
 
 }
 
