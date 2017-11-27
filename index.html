@@ -6,46 +6,42 @@
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
 	<link rel="icon" type="image/png" href="http://www.journalonline.co.uk/favicon/favicon-196.png">
-	<script type="text/javascript">
-(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
-branch.init('key_live_klyCOY1F1OSRM8IYBlLKDgjaBufdj675');
+	<script>
+    // load Branch
+    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent".split(" "), 0);
+    // init Branch
+	branch.init('key_live_klyCOY1F1OSRM8IYBlLKDgjaBufdj675', function(err, data) {
+  console.log(err, data); 
+});
 	function sendSMS(form) {
                 var phone = form.phone.value;
                 var linkData = {
-                    tags: [],
-                    channel: 'Website',
-                    feature: 'TextMeTheApp',
-                    data: {
-                        'foo': 'bar',
-			'custom_int': Date.now(),
-			    'custom_string': 'hello',
-			    '$og_title': 'Title',
-			    '$og_description': 'Description',
-			    '$og_image_url':'http://lorempixel.com/400/400'
-                    }
-                };
-                var options = {};
-                var callback = function(err, result) {
-                    if (err) {
-                        alert("Sorry, something went wrong.");
-			    console.log("result: ", result);
-			    console.log("err: ", err);
-			    console.log("link: ", link);
-                    }
-                    else {
-                        alert("SMS sent!");
-			    console.log("result: ", result);
-			    console.log("link: ", link);
-                    }
-                };
-		
- 		 
-		
-                branch.sendSMS(phone, linkData, options, callback);
-                form.phone.value = "";
-            }
-</script>
-</head>
+		  campaign: 'content 123',
+		  channel: 'facebook',
+		  feature: 'dashboard',
+		  stage: 'new user',
+		  tags: [ 'tag1', 'tag2', 'tag3' ],
+		  alias: '',
+		  data: {
+		    'custom_bool': true,
+		    'custom_int': Date.now(),
+		    'custom_string': 'hello',
+		    '$og_title': 'Title',
+		    '$og_description': 'Description',
+		    '$og_image_url':'http://lorempixel.com/400/400'
+		  }
+		};
+                var linkOptions = {
+		  make_new_link: false // don't create a new deep link if one already exists (e.g. _branch_match_id is in the address bar)
+		};
+
+		branch.sendSMS(phone, linkData, linkOptions, function(err, data) {
+		  console.log(err);
+		});
+		form.phone.value = "";
+	}
+	</script>
+	</head>
 <body>
 	<header>
 		<div class="intro" id="home">
