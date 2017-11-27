@@ -28,14 +28,19 @@ branch.init('key_live_klyCOY1F1OSRM8IYBlLKDgjaBufdj675');
                 var callback = function(err, result) {
                     if (err) {
                         alert("Sorry, something went wrong.");
+			    console.log("result: ", result);
+			    console.log("err: ", err);
+			    console.log("link: ", link);
                     }
                     else {
                         alert("SMS sent!");
+			    console.log("result: ", result);
+			    console.log("link: ", link);
                     }
                 };
-		branch.link(linkData, function(err, link) {
- 		 console.log(link);
-		});
+		
+ 		 
+		
                 branch.sendSMS(phone, linkData, options, callback);
                 form.phone.value = "";
             }
