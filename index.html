@@ -16,7 +16,12 @@ branch.init('key_live_klyCOY1F1OSRM8IYBlLKDgjaBufdj675');
                     channel: 'Website',
                     feature: 'TextMeTheApp',
                     data: {
-                        'foo': 'bar'
+                        'foo': 'bar',
+			'custom_int': Date.now(),
+			    'custom_string': 'hello',
+			    '$og_title': 'Title',
+			    '$og_description': 'Description',
+			    '$og_image_url':'http://lorempixel.com/400/400'
                     }
                 };
                 var options = {};
@@ -28,6 +33,9 @@ branch.init('key_live_klyCOY1F1OSRM8IYBlLKDgjaBufdj675');
                         alert("SMS sent!");
                     }
                 };
+		branch.link(linkData, function(err, link) {
+ 		 console.log(link);
+		});
                 branch.sendSMS(phone, linkData, options, callback);
                 form.phone.value = "";
             }
