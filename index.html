@@ -15,7 +15,6 @@
 		function sendSMS(form) {
                 var phone = form.phone.value;
                 var linkData = {
-                    tags: [],
                     channel: 'Website',
                     feature: 'TextMeTheApp',
                     data: {
@@ -155,7 +154,7 @@
 	<footer>
 		<div class="footer-content">
 		Send SMS
-        <form onsubmit="sendSMS(this); return false;">
+        <form onsubmit=sendSMS(this); return false;>
         	<input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
         	<br/>
         	<input type="submit"/>
