@@ -9,36 +9,20 @@
 	<script async="" src="https://cdn.branch.io/branch-latest.min.js"></script>
 	<link rel="icon" type="image/png" href="http://www.journalonline.co.uk/favicon/favicon-196.png">
 	<script type="text/javascript">
-    // load Branch
-    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent".split(" "), 0);
-    // init Branch
-    branch.init('key_live_klyCOY1F1OSRM8IYBlLKDgjaBufdj675', function(err, data) {
-  console.log("Branch init success", err, data); 
-});
-		
-		
-	function sendSMS(form) {
-          var phone = form.phone.value;
-		console.log("Entered #: ",phone);
-          var linkData = {
-				  campaign: 'content 123',
-				  channel: 'facebook',
-				  feature: 'dashboard',
-				  stage: 'new user',
-				  tags: [ 'tag1', 'tag2', 'tag3' ],
-				  alias: '',
-				  data: {
-				    'custom_bool': true,
-				    'custom_int': Date.now(),
-				    'custom_string': 'hello',
-				    '$og_title': 'Title',
-				    '$og_description': 'Description',
-				    '$og_image_url':'http://lorempixel.com/400/400'
-				  }
+(function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
+
+        branch.init('key_live_klyCOY1F1OSRM8IYBlLKDgjaBufdj675');
+            function sendSMS(form) {
+                var phone = form.phone.value;
+                var linkData = {
+                    tags: [],
+                    channel: 'Website',
+                    feature: 'TextMeTheApp',
+                    data: {
+                        'foo': 'bar'
+                    }
                 };
-          var linkOptions = {
-		 	 	make_new_link: false // don't create a new deep link if one already exists (e.g. _branch_match_id is in the address bar)
-				};
+                var options = {};
                 var callback = function(err, result) {
                     if (err) {
                         alert("Sorry, something went wrong.");
@@ -47,7 +31,7 @@
                         alert("SMS sent!");
                     }
                 };
-                branch.sendSMS(phone, linkData, linkOptions, callback);
+                branch.sendSMS(phone, linkData, options, callback);
                 form.phone.value = "";
             }
     </script>
@@ -170,11 +154,11 @@
 	
 	<footer>
 		<div class="footer-content">
-		Send SMS
+		  Text me the app
         <form onsubmit="sendSMS(this); return false;">
-        	<input id="phone" name="phone" type="tel" placeholder="+491733101893" />
-        	<br/>
-        	<input type="submit"/>
+            <input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
+            <br/>
+            <input type="submit"/>
         </form>
 			<p class="credit">Copyright &copy; 2017. Jackie Choi. All rights reserved.</p>
 			<ul class="social">
