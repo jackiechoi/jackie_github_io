@@ -3,13 +3,20 @@
 <head>
 	<title>Jackie Choi</title>
 	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="main.css">
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
 	<link rel="icon" type="image/png" href="http://www.journalonline.co.uk/favicon/favicon-196.png">
 	<script type="text/javascript">
 (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
+<<<<<<< HEAD
 branch.init('key_live_ceuB4pObor3wq1wTBhZUmjkpvugz1swD');
 	function sendSMS(form) {
+=======
+
+        branch.init('key_live_klyCOY1F1OSRM8IYBlLKDgjaBufdj675');
+            function sendSMS(form) {
+>>>>>>> 3aa5610a85a3b53b69de77eb6f6bb543bcf0dc59
                 var phone = form.phone.value;
                 var linkData = {
                     tags: [],
@@ -31,8 +38,8 @@ branch.init('key_live_ceuB4pObor3wq1wTBhZUmjkpvugz1swD');
                 branch.sendSMS(phone, linkData, options, callback);
                 form.phone.value = "";
             }
-</script>
-</head>
+    </script>
+	</head>
 <body>
 	<header>
 		<div class="intro" id="home">
@@ -50,7 +57,7 @@ branch.init('key_live_ceuB4pObor3wq1wTBhZUmjkpvugz1swD');
 		<section class="about" id="about">
 			<div class="about-content">
 			<h3>Hi there,</h3>
-			<p>I'm a programmer based in Berlin, working on full-stack web development, mobile applications and other exciting projects. Prior to jumping into the dev world, I was Program Manager at Twitter, overseeing the Ads API initiative and their developer partnerships. When I'm not coding, I like to roll up my sleeves and bake healthy desserts or go for a run 🏃🏻‍♀️</p>
+			<p>I'm an engineer living in Berlin, working on full-stack web development, mobile applications and other exciting projects. Prior to jumping into the dev world, I was Program Manager at Twitter, overseeing the Ads API initiative and their developer partnerships. When I'm not coding, I like to roll up my sleeves and bake healthy desserts or go for a run 🏃🏻‍♀️</p>
 			</div>
 		</section>
 
@@ -151,11 +158,11 @@ branch.init('key_live_ceuB4pObor3wq1wTBhZUmjkpvugz1swD');
 	
 	<footer>
 		<div class="footer-content">
-		Send SMS
+		 Send SMS!
         <form onsubmit="sendSMS(this); return false;">
-        	<input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
-        	<br/>
-        	<input type="submit"/>
+            <input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
+            <br/>
+            <input type="submit"/>
         </form>
 			<p class="credit">Copyright &copy; 2017. Jackie Choi. All rights reserved.</p>
 			<ul class="social">
